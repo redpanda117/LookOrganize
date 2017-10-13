@@ -30,33 +30,33 @@ class Login extends Component {
           <Col size="md-6">
             <h2>Already a user? Log in here:</h2>
             <form>
-            <Input
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                name="email"
-                placeholder="Email (required)"
-            />
-            <Input
-                value={this.state.password}
-                onChange={this.handleInputChange}
-                name="password"
-                placeholder="Password (required)"
-            />
-            <FormBtn
-                disabled={!(this.state.email && this.state.password)}
-                onClick={this.handleFormSubmit}
-            >
-            <span className="glyphicon glyphicon-log-in"> </span>  Login
-            </FormBtn>  
+                <Input
+                    value={this.state.email}
+                    onChange={this.handleInputChange}
+                    name="email"
+                    placeholder="Email (required)"
+                />
+                <Input
+                    value={this.state.password}
+                    onChange={this.handleInputChange}
+                    name="password"
+                    placeholder="Password (required)"
+                />
+                <FormBtn
+                    disabled={!(this.state.email && this.state.password)}
+                    onClick={this.handleFormSubmit}
+                >
+                    <span className="glyphicon glyphicon-log-in"> </span>  Login
+                </FormBtn>  
             </form>
           </Col>
           <Col size = "md-1"></Col>
           <Col size ="md-5">
-          <h2>New Users:</h2>
-          <p>Sign up now to create an account</p>
-          <Link to={"/SignUp/" }>
+            <h2>Don't have an accout?</h2>
+            <p>No worries just sign up. It is easy.</p>
+                <Link to={"/SignUp/" }>
           <Button>Sign up</Button>
-          </Link>
+                </Link>
           </Col>
         </Row>
       </Container>
