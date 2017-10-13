@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ children }) =>
+export const Modal = ({ children }) =>
   <div id={children} className="modal fade" role="dialog">
   <div className="modal-dialog">
 
@@ -11,4 +11,3 @@ const Modal = ({ children }) =>
   </div>
 </div>;
 
-export default  Modal;
