@@ -1,12 +1,10 @@
 import React from "react";
 
-export const Modal = ({ children }) =>
-  <div id={children} className="modal fade" role="dialog">
+export const Modal = props =>
+  <div {...props}  role="dialog" className= "modal-container">
   <div className="modal-dialog">
 
-    <div className="modal-content">
-       {children}
-    </div>
+       {props.children}
 
   </div>
 </div>;

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ModalContent = ({ children }) =>
+export const ModalFooter = props =>
    <div className="modal-footer">
-        {children}
+        {props.children}
       </div>;

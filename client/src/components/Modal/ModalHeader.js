@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ModalHeader = ({ children }) =>
+export const ModalHeader = props =>
       <div clasName="modal-header">
-        {children}
+        {props.children}
       </div>;

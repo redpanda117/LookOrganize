@@ -1,7 +1,7 @@
 import React from "react";
 
-export const ModalContent = ({ children }) =>
+export const ModalContent = props =>
     <div className="modal-body">
-        {children}
+        {props.children}
     </div>;
 
