@@ -5,7 +5,7 @@ const routes = require("./routes");
 const app = express();
 const morgan = require("morgan");
 const passport = require("passport");
-const jwt = require("jsonwebtoken");
+const LocalStrategy = require("passport-local");
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
