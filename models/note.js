@@ -1,10 +1,10 @@
 // require Mongoose
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // Create Schema class
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var NoteSchema = new Schema({
+const NoteSchema = new Schema({
   // Just a string 
  //min length prevent empty entries
   body: {
@@ -14,7 +14,7 @@ var NoteSchema = new Schema({
 });
 
 // Create the Note model with the NoteSchema
-var Note = mongoose.model("Note", NoteSchema);
+const Note = mongoose.model("Note", NoteSchema);
 
 // Export the model
 module.exports = Note;

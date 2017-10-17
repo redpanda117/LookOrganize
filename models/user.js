@@ -1,9 +1,10 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
+const passLocalMon = require("passport-local-mongoose");
 
 // Create the Schema class
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+const UserSchema = new Schema({
   name: {
     type: String,
     trim: true,
@@ -33,8 +34,10 @@ var UserSchema = new Schema({
 
 });
 
+userSchema.plugin(passLocalMon);
+
 // Create the "User" model with our UserSchema schema
-var User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema);
 
 // Export the User model, so it can be used in server.js with a require
 module.exports = User;

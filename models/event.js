@@ -1,10 +1,10 @@
 // require Mongoose
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // Create Schema class
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var EventSchema = new Schema({
+const EventSchema = new Schema({
   // Just a string 
  //min length prevent empty entries
   body: {
@@ -22,7 +22,7 @@ var EventSchema = new Schema({
 });
 
 // Create the Event model with the EventSchema
-var Event = mongoose.model("Event", EventSchema);
+const Event = mongoose.model("Event", EventSchema);
 
 // Export the model
 module.exports = Event;
