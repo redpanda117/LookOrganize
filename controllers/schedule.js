@@ -10,5 +10,15 @@ findAllEvents: function (req, res) {
         .catch(err => res.status(422).json(err));
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
+  },
+createEvent: function (req, res) {
+    if (req.user) {
+      db.Events
+        .find(req.query)
+        .sort({ date: -1 })
+        .then(dbModel => res.json({results: dbModel, sess: req.session}))
+        .catch(err => res.status(422).json(err));
+    }
+    else { res.json({ error: "Please login", statusCode: 401 }) }
   }
 };
