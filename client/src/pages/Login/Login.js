@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import Button from "../../components/Button";
+import { Nav }  from "../../components/Nav";
 
 class Login extends Component {
     state = {
@@ -23,7 +24,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-
+          <Nav></Nav>
       <Container fluid>
         <Row>
         <h1>Log In</h1>
