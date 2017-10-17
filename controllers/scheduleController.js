@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = {
 findAllEvents: function (req, res) {
     if (req.user) {
-      db.Events
+      db.Event
         .find(req.query)
         .sort({ date: -1 })
         .then(dbModel => res.json({results: dbModel, sess: req.session}))
@@ -13,7 +13,7 @@ findAllEvents: function (req, res) {
   },
 createEvent: function (req, res) {
     if (req.user) {
-      db.Events
+      db.Event
         .create(req.body)
         .sort({ date: -1 })
         .then(dbModel => res.json({results: dbModel, sess: req.session}))

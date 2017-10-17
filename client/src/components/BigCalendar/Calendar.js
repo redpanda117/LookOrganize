@@ -1,3 +1,4 @@
+import React from "react";
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 
@@ -5,12 +6,16 @@ import moment from 'moment';
 // to the correct localizer.
 BigCalendar.momentLocalizer(moment); 
 
-const MyCalendar = props => (
+let allViews = Object.keys(BigCalendar.views).map(k => BigCalendar.views[k]);
+
+const Calendar = props => (
   <div>
     <BigCalendar
+      {...this.props}
+      views={allViews}
       events={myEventsList}
-      startAccessor='startDate'
-      endAccessor='endDate'
     />
   </div>
 );
+
+export default Calendar;
