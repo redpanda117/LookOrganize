@@ -3,8 +3,6 @@ const authRoutes = require("./auth");
 const calendarRoutes = require("./calendar");
 const noteRoutes = require("./note");
 
-
-
 // Auth routes
 router.use("/auth", authRoutes);
 router.use("/calendar", calendarRoutes);
