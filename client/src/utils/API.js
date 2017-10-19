@@ -14,8 +14,8 @@ export default {
     return axios.delete("/api/note/" + id);
   },
   // Saves a Note to the database
-  saveNote: function(NoteData) {
-    return axios.post("/api/note", NoteData);
+  saveNote: function(noteData) {
+    return axios.post("/api/note", noteData);
   },
   login: function(userData) {
     return axios.post("/api/auth/login", userData);
