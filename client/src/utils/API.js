@@ -1,6 +1,27 @@
 import axios from "axios";
 
 export default {
+  login: function(userData) {
+    return axios.post("/api/auth/login", userData);
+  },
+  logout: function() {
+    return axios.get("/api/auth/logout");
+  },
+  register: function(userData) {
+    return axios.post("/api/auth/register", userData);
+  },
+  getEvents: function() {
+    return axios.get("/api/event");
+  },
+  getEvent: function(id) {
+    return axios.get("/api/event/" + id);
+  },
+  deleteEvent: function(id) {
+    return axios.delete("/api/event/" + id);
+  },
+  saveEvent: function(eventData) {
+    return axios.post("/api/event", eventData);
+  },
   // Gets all note
   getNotes: function() {
     return axios.get("/api/note");
@@ -16,14 +37,6 @@ export default {
   // Saves a Note to the database
   saveNote: function(noteData) {
     return axios.post("/api/note", noteData);
-  },
-  login: function(userData) {
-    return axios.post("/api/auth/login", userData);
-  },
-  logout: function() {
-    return axios.get("/api/auth/logout");
-  },
-  register: function(userData) {
-    return axios.post("/api/auth/register", userData);
-  },
+  }
+
 };

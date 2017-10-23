@@ -27,7 +27,11 @@ class Ideas extends Component{
         }
         else {
           console.log("user:", res.data.sess);
-          this.setState({currentUser: res.data.sess.passport.user, notes: res.data.results, title: "", body: ""})
+          this.setState({
+            currentUser: res.data.sess.passport.user, 
+            notes: res.data.results, 
+            title: "", 
+            body: ""})
         }
       })
       .catch(err => console.log(err));
