@@ -15,8 +15,17 @@ const UserSchema = new Schema({
   
   email: {
     type: String
-  }
+  },
 
+  note: [{
+    type: Schema.Types.ObjectId,
+    ref: "Note"
+ }],
+ 
+  event: [{
+    type: Schema.Types.ObjectId,
+    ref: "Event"
+ }] 
 });
 
 UserSchema.plugin(passLocalMon);
