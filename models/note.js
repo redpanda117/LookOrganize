@@ -5,8 +5,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const NoteSchema = new Schema({
-  // Just a string 
- //min length prevent empty entries
+  title:{
+    type: String,
+    require:true
+  },
   body: {
     type: String,
     minlength: 1

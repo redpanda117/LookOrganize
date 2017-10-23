@@ -5,10 +5,10 @@ const authController = require("../../controllers/authController");
 router.route("/login")
   .post(authController.doLogin);
 
-  router.route("/register")
+router.route("/register")
   .post(authController.doRegister);
 
-  router.route("/logout")
+router.route("/logout")
   .get(authController.logout)
   
 module.exports = router;

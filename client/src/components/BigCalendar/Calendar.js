@@ -6,14 +6,14 @@ import moment from 'moment';
 // to the correct localizer.
 BigCalendar.momentLocalizer(moment); 
 
-let allViews = Object.keys(BigCalendar.views).map(k => BigCalendar.views[k]);
+//let allViews = Object.keys(BigCalendar.views).map(k => BigCalendar.views[k]);
 
 const Calendar = props => (
   <div>
     <BigCalendar
       {...this.props}
-      views={allViews}
-      events={myEventsList}
+      //views={allViews}
+      /*events={myEventsList}*/
     />
   </div>
 );
