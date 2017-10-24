@@ -25,7 +25,7 @@ class Ideas extends Component{
   loadNotes = () => {
     API.getNotes()
       .then(res => {
-        if(res.data.statusCode == 401){
+        if(res.data.statusCode === 401){
           this.props.history.push("/login");
         }
         else {

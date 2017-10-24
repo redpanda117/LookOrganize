@@ -6,12 +6,13 @@ const app = express();
 const morgan = require("morgan");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve up static assets
+
 app.use(express.static("client/build"));
 
 app.use(require("express-session")({secret: 'work', resave: false, saveUninitialized: false}));

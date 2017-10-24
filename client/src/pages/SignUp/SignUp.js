@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import API from "../../utils/API";
+import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
@@ -8,10 +8,10 @@ import { Nav }  from "../../components/Nav";
 
 class SignUp extends Component {
     state = {
-        users:[],
-        name:"",
+        username:"",
         email:"",
-        password:""
+        password:"",
+        currentUser:""
     }
 
     handleInputChange = event => {
@@ -21,11 +21,31 @@ class SignUp extends Component {
         });
       };
 
+      handleFormSubmit = event => {
+        event.preventDefault();
+        if (this.state.username && this.state.password) {
+          API.register({
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password
+          })
+            .then(res => {
+              if(res.data.user){
+                console.log(res.data.user);
+                //this.props.history.push('/Schedule');
+              }
+              else {
+                console.log("no user");
+              }
+            })
+            .catch(err => console.log(err));
+        }
+      };  
     
   render() {
     return (
         <div>
-          <Nav></Nav>
+          <Nav userInfo={this.state.currentUser}></Nav>
             <Container fluid>   
                 <Row>
                 <Col size="md-3">
@@ -37,7 +57,7 @@ class SignUp extends Component {
                         <Input
                             value={this.state.name}
                             onChange={this.handleInputChange}
-                            name="name"
+                            name="username"
                             placeholder="Name (required)"
                         />
                         <Input
@@ -49,12 +69,13 @@ class SignUp extends Component {
                         <Input
                             value={this.state.password}
                             onChange={this.handleInputChange}
+                            type= "password"
                             name="password"
                             placeholder="Password (required)"
                         />
                         <Link to={"/SignUp/" }>
                         <FormBtn
-                            disabled={!(this.state.email && this.state.password && this.state.name)}
+                            disabled={!(this.state.email && this.state.password && this.state.username)}
                             onClick={this.handleFormSubmit}
                         >
                         <span className="glyphicon glyphicon-user"></span>  Lets Get Started

@@ -11,6 +11,10 @@ const EventSchema = new Schema({
     type: String,
     minlength: 1
   },
+  day:{
+    type: String,
+    required: true
+  },
   start:{
       type: String,
       required: true

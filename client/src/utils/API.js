@@ -37,6 +37,22 @@ export default {
   // Saves a Note to the database
   saveNote: function(noteData) {
     return axios.post("/api/note", noteData);
-  }
+  },
+    
+    getFinances: function() {
+      return axios.get("/api/finance");
+    },
+   
+    getFinance: function(id) {
+      return axios.get("/api/finance/" + id);
+    },
+  
+    deleteFinance: function(id) {
+      return axios.delete("/api/finance/" + id);
+    },
+    
+    saveFinance: function(financeData) {
+      return axios.post("/api/finance", financeData);
+    }
 
 };

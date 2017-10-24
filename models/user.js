@@ -25,7 +25,13 @@ const UserSchema = new Schema({
   event: [{
     type: Schema.Types.ObjectId,
     ref: "Event"
- }] 
+ }],
+ 
+  finance: [{
+    type: Schema.Types.ObjectId,
+    ref: "Finance"
+ }]
+ 
 });
 
 UserSchema.plugin(passLocalMon);

@@ -8,20 +8,20 @@ import { Modal } from 'react-bootstrap';
 
 class Finance extends Component{
   state = {
-    notes:[],
+    finance:[],
     title:"",
     body:"",
     showModal: false
   };
 
   componentDidMount() {
-    this.loadNotes();
+    this.loadFinance();
   }
 
-  loadNotes = () => {
-    API.getNotes()
+  loadFinance = () => {
+    API.getFinance()
       .then(res =>
-        this.setState({ notes: res.data, title: "", body: ""})
+        this.setState({ finance: res.data, title: "", body: ""})
       )
       .catch(err => console.log(err));
   };
@@ -44,16 +44,16 @@ class Finance extends Component{
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title || this.state.body) {
-      API.saveNote({
+      API.saveFinance({
         title: this.state.title,
         body: this.state.body
       })
-        .then(res => this.loadNote())
+        .then(res => this.loadFinance())
         .catch(err => console.log(err));
     }
   };
 
-  addNoteClick = (event) => {
+  addCostClick = (event) => {
     this.handleFormSubmit(event); 
     this.close();
   }
