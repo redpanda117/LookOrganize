@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import MyCalendar from "./pages/Calendar";
+import MySchedule from "./pages/Calendar";
 import Ideas from "./pages/Ideas";
 import Finance from "./pages/Finance";
 import Login from "./pages/Login";
@@ -16,8 +16,8 @@ const App = () =>
         <Route exact path="/" component={Home} />
         <Route exact path="/Login" component={Login} />
         <Route exact path="/SignUp" component={SignUp} />
-        <Route exact path= "/Schedule/:id" component={MyCalendar}/>
-        <Route exact path = "/Finance/:id" component={Finance}/>
+        <Route exact path= "/Schedule/" component={MySchedule}/>
+        <Route exact path = "/Finance/" component={Finance}/>
         <Route exact path="/Ideas" component={Ideas} />
         <Route component={NoMatch} />
       </Switch>

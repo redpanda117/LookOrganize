@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Nav, SideNav}  from "../../components/Nav";
+import {List, ListItem}  from "../../components/List";
 import Button from "../../components/Button";
+import DeleteBtn from "../../components/DeleteBtn";
 import { Input, TextArea} from "../../components/Form";
 import { Modal } from 'react-bootstrap';
 
@@ -87,9 +90,7 @@ class Ideas extends Component{
               <Button onClick={this.open}>
                   +
               </Button>
-            </Row>
-            <Row>
-            {this.state.notes.length ? (
+              {this.state.notes.length ? (
                 <List>
                   {this.state.notes.map(note => (
                     <ListItem key={note._id}>
@@ -103,7 +104,10 @@ class Ideas extends Component{
                   ))}
                 </List>
               ) : (
-                  <h3>No Results to Display</h3>
+                  <div>
+                  <h3>No Note to Display</h3>
+                  <p>Click on the + button to add a note</p>
+                  </div>
                 )}
             </Row>
             <Container>

@@ -1,13 +1,13 @@
 const router = require("express").Router();
-const calendarController = require("../../controllers/calendarController");
+const scheduleController = require("../../controllers/scheduleController");
 
 //find all event and create them
 router.route("/")
-.get(calendarController.findAll);
+.get(scheduleController.findAll);
 
 router.route("/:id")
-.post(calendarController.createEvent)
-.delete(calendarController.removeEvent);
+.post(scheduleController.createEvent)
+.delete(scheduleController.removeEvent);
 
 
 module.exports = router;

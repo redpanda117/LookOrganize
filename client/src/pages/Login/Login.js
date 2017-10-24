@@ -10,7 +10,8 @@ class Login extends Component {
     state = {
         username:"",
         email:"",
-        password:""
+        password:"",
+        currentUser:""
     }
 
     componentWillMount() {
@@ -48,7 +49,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-          <Nav></Nav>
+          <Nav userInfo={this.state.currentUser}></Nav>
       <Container fluid>
         <Row>
         <h1>Log In</h1>

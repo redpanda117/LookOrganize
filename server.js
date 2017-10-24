@@ -6,7 +6,7 @@ const app = express();
 const morgan = require("morgan");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));

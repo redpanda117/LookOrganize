@@ -1,15 +1,20 @@
 import React, { Component } from "react";
-//import API from "../../utils/API";
+import API from "../../utils/API";
+import moment from 'moment';
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import { Nav, SideNav}  from "../../components/Nav";
-import BigCalendar from 'react-big-calendar';
+import MyCalendar from "../../components/MyCalendar";
 
 
-//let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
-
-class MyCalendar extends Component {
+class MySchedule extends Component {
+  
+//checking if the date click on is the same
+    slotSelected = (slotInfo) => {
+      console.log(slotInfo)
+    }
+  
     
 render(){
     return(
@@ -19,7 +24,11 @@ render(){
           <Col size = "md-3">
             <SideNav></SideNav>
           </Col>
+          <Col size = "md-8">
+              <MyCalendar slotSelected = {this.slotSelected}></MyCalendar>
+          </Col>
         </Row>
+
         </div>
 )}
 
@@ -32,4 +41,4 @@ render(){
 
 
 
-export default MyCalendar;
+export default MySchedule;
